@@ -22,7 +22,7 @@ module DiscreteMathTopics
       end
 
       class Route
-        attr_accessor :distance
+        attr_reader :distance
 
         def initialize(start_location, finish_location)
           @start_location = start_location

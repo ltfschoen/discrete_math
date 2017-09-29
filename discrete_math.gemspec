@@ -1,10 +1,10 @@
 Gem::Specification.new do |s|
   s.name        = 'discrete_math'
-  s.version     = '0.0.2'
+  s.version     = '0.0.3'
   s.date        = '2017-09-29'
   s.summary     = "Discrete Math"
   s.description = "A discrete math gem"
-  s.authors     = ["Luke Schoen"]
+  s.authors     = ["Luke Schoen", "Ruegen Aschenbrenner"]
   s.email       = 'ltfschoen@gmail.com'
   # http://guides.rubygems.org/specification-reference/#files
   s.files       = ['lib/discrete_math.rb']

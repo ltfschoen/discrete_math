@@ -1,14 +1,15 @@
 require_relative './modules/discrete_math_topics'
 
 module DiscreteMath
-  include DiscreteMathTopics::PreliminaryMath # AbsoluteValuesDemo
-  include DiscreteMathTopics::PreliminaryMath::AbsoluteValuesDemo::LocationConfig # @@location_coordinates
+  module Power
+    include DiscreteMathTopics::PreliminaryMath # AbsoluteValuesDemo
+    include DiscreteMathTopics::PreliminaryMath::AbsoluteValuesDemo::LocationConfig # @@location_coordinates
 
-  def self.demo_power_of
-    location_first = AbsoluteValuesDemo::Location.new(@@location_coordinates[:sydney])
-    location_second = AbsoluteValuesDemo::Location.new(@@location_coordinates[:melbourne])
-    route_first = AbsoluteValuesDemo::Route.new(location_first, location_second)
-    puts "=====> Demo Power Of: route first distance is: #{route_first.distance}"
+    def self.get_distance
+      location_first = AbsoluteValuesDemo::Location.new(@@location_coordinates[:sydney])
+      location_second = AbsoluteValuesDemo::Location.new(@@location_coordinates[:melbourne])
+      route_first = AbsoluteValuesDemo::Route.new(location_first, location_second)
+    end
   end
 end
 
@@ -32,7 +33,9 @@ module Menu
       """
       user_choice = gets.chomp
       if user_choice == "1"
-        DiscreteMath.demo_power_of
+        puts "Calculating distance from Sydney to Melbourne..."
+        route_first = DiscreteMath::Power.get_distance
+        Menu.show_result(route_first.distance)
         break
       elsif user_choice == "q"
         break
@@ -40,6 +43,10 @@ module Menu
         user_choice = "invalid"
       end
     end
+  end
+
+  def self.show_result(result)
+    puts "=====> Demo Power Of result is: #{result}"
   end
 end
 
