@@ -1,9 +1,18 @@
-require_relative './helpers/math/math_helpers'
+require_relative '../helpers/math/math_helpers'
 
 # DiscreteMath::Preliminary
-module DiscreteMath
+module DiscreteMathTopics
   module PreliminaryMath
     module AbsoluteValuesDemo
+
+      module LocationConfig
+        @@location_coordinates = {
+          sydney: { x: -100, y: -100 },
+          brisbane: { x: 100, y: 100 },
+          melbourne: { x: 200, y: 200 }
+        }
+      end
+
       class Location
         attr_accessor :coordinates
 
