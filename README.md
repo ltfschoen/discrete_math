@@ -31,7 +31,7 @@
   * [RSpec Tests](http://rspec.info/)
   * Rake
     * Executable and ARGV
-      * [Rake Executable and ARGV] (http://www.thegreatcodeadventure.com/argv-and-command-line-gems/)
+      * [Rake Executable and ARGV](http://www.thegreatcodeadventure.com/argv-and-command-line-gems/)
       * [ARGV](https://github.com/rails/rails/blob/master/railties/lib/rails/commands.rb)
     * [Rake Task Guide](http://www.stuartellis.name/articles/rake/)
-      * [Rakefile Bash Commands] (https://stackoverflow.com/questions/9796028/execute-bash-commands-from-a-rakefile)
+      * [Rakefile Bash Commands](https://stackoverflow.com/questions/9796028/execute-bash-commands-from-a-rakefile)
