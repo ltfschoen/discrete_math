@@ -4,13 +4,13 @@ namespace :discrete do
   # rake
   task default: %w[run]
 
-  # rake discrete:start
+  # rake discrete:run
   desc "Run Gem discrete math"
   task :run do
     ruby "bin/discrete"
   end
 
-  # rake discrete:spec
+  # rake discrete:test
   require 'rspec/core/rake_task'
   RSpec::Core::RakeTask.new(:spec)
   desc "Run RSpec tests"

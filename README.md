@@ -4,16 +4,13 @@
     gem install rspec
     bundle install
     ```
-  * Run
-    ```
-    ruby lib/discrete_math.rb
-    ```
 
 * Executable
   ```
   rake -T
   rake discrete:start
   ruby bin/discrete
+  ruby lib/discrete_math.rb
   ```
 
 * Unit Tests

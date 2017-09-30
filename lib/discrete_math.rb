@@ -50,5 +50,4 @@ module Menu
   end
 end
 
-puts ARGV[0]
 Menu.request_user_choice_demo
