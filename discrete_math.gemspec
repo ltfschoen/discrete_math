@@ -1,7 +1,7 @@
 Gem::Specification.new do |s|
   s.name        = 'discrete_math'
-  s.version     = '0.0.5'
-  s.date        = '2017-09-30'
+  s.version     = '0.0.6'
+  s.date        = '2017-10-01'
   s.summary     = "Discrete Math"
   s.description = "A discrete math gem"
   s.authors     = ["Luke Schoen", "Ruegen Aschenbrenner"]

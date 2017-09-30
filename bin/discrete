@@ -1,3 +1,5 @@
 #!/usr/bin/env ruby
 
 require_relative '../lib/discrete_math.rb'
+arg = ARGV[0]
+DiscreteMath.run(arg)
