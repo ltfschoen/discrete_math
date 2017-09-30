@@ -3,11 +3,22 @@
     ```
     gem install rspec
     bundle install
+    ```
+  * Run
+    ```
     ruby lib/discrete_math.rb
     ```
 
+* Executable
+  ```
+  rake -T
+  rake discrete:start
+  ruby bin/discrete
+  ```
+
 * Unit Tests
   ```
+  rake discrete:test
   rspec spec/helpers/math_helpers_spec.rb
   ```
 
@@ -32,3 +43,7 @@
 * Tools
   * [Create Ruby Gem](http://guides.rubygems.org/make-your-own-gem/)
   * [RSpec Tests](http://rspec.info/)
+  * Rake
+    * http://www.thegreatcodeadventure.com/argv-and-command-line-gems/
+    * https://stackoverflow.com/questions/9796028/execute-bash-commands-from-a-rakefile
+    * http://www.stuartellis.name/articles/rake/
