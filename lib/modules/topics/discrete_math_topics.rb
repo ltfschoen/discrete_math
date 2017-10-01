@@ -1,4 +1,4 @@
-require_relative '../helpers/math/math_helpers'
+require_relative '../../helpers/math/math_helpers'
 
 # DiscreteMath::Preliminary
 module DiscreteMathTopics
@@ -11,6 +11,26 @@ module DiscreteMathTopics
           brisbane: { x: 100, y: 100 },
           melbourne: { x: 200, y: 200 }
         }
+      end
+
+      module Calculate
+        include LocationConfig # @@location_coordinates
+
+        def self.run
+          Calculate.get_distance
+        end
+
+        def self.get_distance
+          puts "\nCalculating distance from Sydney to Melbourne..."
+          location_first = Location.new(@@location_coordinates[:sydney])
+          location_second = Location.new(@@location_coordinates[:melbourne])
+          route_first = Route.new(location_first, location_second)
+          Calculate.show_result(route_first.distance)
+        end
+
+        def self.show_result(result)
+          puts "=====> Result: #{result}\n"
+        end
       end
 
       class Location
