@@ -2,3 +2,4 @@
 .bundle/
 source
 *.gem
+temp/

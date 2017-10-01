@@ -1,6 +1,6 @@
 Gem::Specification.new do |s|
   s.name        = 'discrete_math'
-  s.version     = '0.0.9'
+  s.version     = '0.0.10'
   s.date        = '2017-10-02'
   s.summary     = "Discrete Math"
   s.description = "A discrete math gem"

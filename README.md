@@ -3,6 +3,13 @@
   * Install using Bundler with Ruby or framework (i.e. Ruby on Rails)
     * Add to Gemfile `gem 'discrete_math'`
     * Install dependencies `bundle install`
+    * Add missing dependencies
+      ```
+      gem install rest-client
+      ```
+  * Setup IntelliJ
+    * Fix error `TERM environment variable not set`
+      * Add to Edit Configurations Environment Variable `TERM=xterm-256color`
   * Install Signed Gem from Ruby Gemspec
     * Download [discrete math Gem](https://rubygems.org/gems/discrete_math)
     * Verify SHA256 Checksum matches
@@ -82,7 +89,7 @@
     rake discrete:install;
     cd ~/.ssh/; gem cert --build ltfschoen@gmail.com; chmod 600 gem-p*;
     cd ~/code/discrete_maths;
-    mkdir certs; cp ~/.ssh/gem-public_cert.pem certs/ltfschoen.pem;
+    mkdir -p certs; cp ~/.ssh/gem-public_cert.pem certs/ltfschoen.pem;
     gem cert --add certs/ltfschoen.pem; git add certs/ltfschoen.pem;
     rake discrete:deploy[0.0.8]
     ```

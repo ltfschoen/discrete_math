@@ -11,8 +11,8 @@ module SubmenuDemo
     table = MenuHelpers.terminal_table do |t|
       t.title = 'Select a number'
       t.add_row [0, 'Back to main menu']
-      t.add_row [1, 'Demo Power']
-      t.add_row [2, 'Demo SHA-256 Checksum']
+      t.add_row [1, 'Demo SHA-256 Checksum']
+      t.add_row [2, 'Demo Power']
       t.style = { all_separators: true }
     end
     puts table
@@ -29,11 +29,11 @@ module SubmenuDemo
         when "0"
           Menu.show_choices_main_menu
         when "1"
-          PowersDemo::Calculate.run
+          ShasumDemo.run
           MenuHelpers.request_input_continue_for_menu("sub_demo")
           SubmenuDemo.show_choices_sub_menu
         when "2"
-          ShasumDemo.run
+          PowersDemo::Calculate.run
           MenuHelpers.request_input_continue_for_menu("sub_demo")
           SubmenuDemo.show_choices_sub_menu
         else
