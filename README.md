@@ -5,8 +5,11 @@
     * Install dependencies `bundle install`
   * Install Signed Gem from Ruby Gemspec
     * Download [discrete math Gem](https://rubygems.org/gems/discrete_math)
-    * Verify SHA256 Checksum matches `ruby -rdigest/sha2 -e "puts Digest::SHA256.new.hexdigest(File.read('discrete_math-<insert_version>.gem'))`
-    `gem install discrete_math --trust-policy HighSecurity`
+    * Verify SHA256 Checksum matches
+      ```
+      ruby -rdigest/sha2 -e "puts Digest::SHA256.new.hexdigest(File.read('discrete_math-<insert_version>.gem'));
+      gem install discrete_math --trust-policy HighSecurity
+      ```
     * Discrete Math Gem is cryptographically signed to ensure the downloaded gem has not been tampered with. Add my public key (if you haven’t already) as a trusted certificate. The HighSecurity trust profile will verify and only allow the installation of signed gem dependencies.
       ```
       gem cert --add <(curl -Ls https://raw.github.com/ltfschoen/discrete_math/master/certs/ltfschoen.pem)
