@@ -15,12 +15,12 @@
     * Verify SHA256 Checksum matches
       ```
       ruby -rdigest/sha2 -e "puts Digest::SHA256.new.hexdigest(File.read('discrete_math-<insert_version>.gem'));
-      gem install discrete_math --trust-policy HighSecurity
+      gem install discrete_math --trust-policy MediumSecurity
       ```
-    * Discrete Math Gem is cryptographically signed to ensure the downloaded gem has not been tampered with. Add my public key (if you haven’t already) as a trusted certificate. The HighSecurity trust profile will verify and only allow the installation of signed gem dependencies.
+    * Discrete Math Gem is cryptographically signed to ensure the downloaded gem has not been tampered with. Add my public key (if you haven’t already) as a trusted certificate. The MediumSecurity trust profile verifies signed gems but allows installation of required unsigned dependencies.
       ```
       gem cert --add <(curl -Ls https://raw.github.com/ltfschoen/discrete_math/master/certs/ltfschoen.pem)
-      gem install metric_fu -P HighSecurity
+      gem install discrete_math -P MediumSecurity
       ```
   * Run in Interactive Ruby (IRB)
     * Run IRB
@@ -39,13 +39,13 @@
     ```
   * Setup
     * Switch to Ruby version
-    * Install dependencies
+    * [Install Gemspec dependencies](http://guides.rubygems.org/patterns/)
     * Show Gem environment and installation locations
     * Show Rake commands available
     * Summary of Setup Steps
       ```
       rbenv use 2.4.2;
-      gem install rspec; bundle install;
+      gem install --dev rake terminal-table rake rest-client rspec;
       gem env home; gem list -d;
       rake -T;
       ```
