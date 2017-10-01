@@ -6,6 +6,11 @@ Gem::Specification.new do |s|
   s.description = "A discrete math gem"
   s.authors     = ["Luke Schoen", "Ruegen Aschenbrenner"]
   s.email       = 'ltfschoen@gmail.com'
+  s.required_ruby_version = Gem::Requirement.new(">= 1.9.3")
+  s.required_rubygems_version = Gem::Requirement.new(">= 1.3.2")
+  # Self-signing Certificates http://guides.rubygems.org/security/
+  s.cert_chain  = ['certs/ltfschoen.pem']
+  s.signing_key = File.expand_path("~/.ssh/gem-private_key.pem") if $0 =~ /gem\z/
   # http://guides.rubygems.org/specification-reference/#files
   s.files       = ['lib/discrete_math.rb']
   s.files       += Dir['lib/*.rb']
