@@ -34,30 +34,37 @@
   * Build, install, and run Gem updates on local machine
     * Change version in discrete_math.gemspec
     * Note: [Check that all used Gem files have been added to Gemspec](http://guides.rubygems.org/specification-reference/#files)
+    * Create Self-Signed Gem Certificate
+      * Update discrete_math.gemspec
+        ```
+        s.cert_chain  = ['certs/ltfschoen.pem']
+        s.signing_key = File.expand_path("~/.ssh/gem-private_key.pem") if $0 =~ /gem\z/
+        ```
+      * Generate Certificates
+        ```
+        ~/.ssh/gem cert --build ltfschoen@gmail.com
+        ~/.ssh/chmod 600 gem-p*
+        mkdir certs; cp ~/.ssh/gem-public_cert.pem certs/ltfschoen.pem
+        git add certs/ltfschoen.pem
+        gem cert --add certs/ltfschoen.pem
+        ```
+    * Reference
+      * [RubyGem Security](http://guides.rubygems.org/security/)
     * Uninstall specific version of previously installed discrete math gem (i.e. version 0.0.1) `rake discrete:uninstall[0.0.1]`
     * Build and install new discrete math gem version defined in discrete_math.gemspec `rake discrete:install`
     * Run
       * Default program passing argument for default mode `rake discrete:run[default]`
         * Alternative 2: See IRB instructions for General User
   * Deploy latest Gem discrete math version to RubyGems (i.e. version 0.0.2) `rake discrete:deploy[0.0.2]`
-
-* Gem Construction Info
-  * Create Self-Signed Gem Certificate
-    * Update discrete_math.gemspec
-      ```
-      s.cert_chain  = ['certs/ltfschoen.pem']
-      s.signing_key = File.expand_path("~/.ssh/gem-private_key.pem") if $0 =~ /gem\z/
-      ```
-    * Generate Certificates
-      ```
-      ~/.ssh/gem cert --build ltfschoen@gmail.com
-      ~/.ssh/chmod 600 gem-p*
-      mkdir certs; cp ~/.ssh/gem-public_cert.pem certs/ltfschoen.pem
-      git add certs/ltfschoen.pem
-      gem cert --add certs/ltfschoen.pem
-      ```
-    * Reference
-      * [RubyGem Security](http://guides.rubygems.org/security/)
+  * Deployment Steps Summary
+    ```
+    rake discrete:install;
+    cd ~/.ssh/; gem cert --build ltfschoen@gmail.com; chmod 600 gem-p*;
+    cd ~/code/discrete_maths;
+    mkdir certs; cp ~/.ssh/gem-public_cert.pem certs/ltfschoen.pem;
+    gem cert --add certs/ltfschoen.pem; git add certs/ltfschoen.pem;
+    rake discrete:deploy[0.0.8]
+    ```
 
 * References
   * [Create Ruby Gem](http://guides.rubygems.org/make-your-own-gem/)
