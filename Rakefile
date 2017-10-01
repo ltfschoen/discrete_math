@@ -31,7 +31,7 @@ namespace :discrete do
     spec = Gem::Specification::load("discrete_math.gemspec")
     puts "Building and installing Gem from gemspec discrete math with version #{spec.version}"
     `gem build discrete_math.gemspec`
-    `gem install discrete_math-#{spec.version}.gem`
+    `gem install discrete_math-#{spec.version}.gem -P HighSecurity`
     puts "Built and installed Gem discrete math version: #{spec.version}"
   end
 
