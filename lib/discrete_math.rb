@@ -25,5 +25,3 @@ module DiscreteMath
     end
   end
 end
-
-DiscreteMath.run("d")
