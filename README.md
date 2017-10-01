@@ -15,21 +15,42 @@
       gem cert --add <(curl -Ls https://raw.github.com/ltfschoen/discrete_math/master/certs/ltfschoen.pem)
       gem install metric_fu -P HighSecurity
       ```
-
   * Run in Interactive Ruby (IRB)
-    * Run IRB `irb`
-    * Load and Run Gem discrete math within IRB `require 'discrete_math'; DiscreteMath.run("default")`
+    * Run IRB
+    * Load and Run Gem discrete math within IRB
     * Exit IRB `quit`
+    * Summary of Steps
+      ```
+      irb
+      require 'discrete_math'; DiscreteMath.run("default")
+      ```
 
 * Gem Developer Contributor Usage
-  * Clone Repo `git clone https://github.com/ltfschoen/discrete_math && cd discrete_math`
+  * Clone Repo
+    ```
+    git clone https://github.com/ltfschoen/discrete_math && cd discrete_math
+    ```
   * Setup
-    * Switch to Ruby version `rbenv use 2.4.2`
-    * Install dependencies `gem install rspec; bundle install`
-    * Show Gem environment and installation locations `gem env home; gem list -d`
-    * Show Rake commands available `rake -T`
+    * Switch to Ruby version
+    * Install dependencies
+    * Show Gem environment and installation locations
+    * Show Rake commands available
+    * Summary of Setup Steps
+      ```
+      rbenv use 2.4.2;
+      gem install rspec; bundle install;
+      gem env home; gem list -d;
+      rake -T;
+      ```
+    * Run Demo
+      ```
+      ruby main.rb
+      ```
   * Unit Tests
-    * Run Unit Tests `rake discrete:test`
+    * Run Unit Tests
+      ```
+      rake discrete:test
+      ```
       * Alternative `rspec spec/helpers/math_helpers_spec.rb`
   * Build, install, and run Gem updates on local machine
     * Change version in discrete_math.gemspec
