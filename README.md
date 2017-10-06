@@ -44,8 +44,8 @@
     * Show Rake commands available
     * Summary of Setup Steps
       ```
-      rbenv use 2.4.2;
-      gem install --dev rake terminal-table rake rest-client rspec;
+      rbenv local 2.4.2;
+      gem install --dev rake terminal-table rake rest-client rspec algorithms;
       gem env home; gem list -d;
       rake -T;
       ```

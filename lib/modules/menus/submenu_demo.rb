@@ -12,7 +12,8 @@ module SubmenuDemo
       t.title = 'Select a number'
       t.add_row [0, 'Back to main menu']
       t.add_row [1, 'Demo SHA-256 Checksum']
-      t.add_row [2, 'Demo Power']
+      t.add_row [2, 'Demo Algorithm']
+      t.add_row [3, 'Demo Power']
       t.style = { all_separators: true }
     end
     puts table
@@ -33,6 +34,10 @@ module SubmenuDemo
           MenuHelpers.request_input_continue_for_menu("sub_demo")
           SubmenuDemo.show_choices_sub_menu
         when "2"
+          AlgorithmDemo.run
+          MenuHelpers.request_input_continue_for_menu("sub_demo")
+          SubmenuDemo.show_choices_sub_menu
+        when "3"
           PowersDemo::Calculate.run
           MenuHelpers.request_input_continue_for_menu("sub_demo")
           SubmenuDemo.show_choices_sub_menu
