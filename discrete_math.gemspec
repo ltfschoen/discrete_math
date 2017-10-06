@@ -6,8 +6,8 @@ Gem::Specification.new do |s|
   s.description = "A discrete math interactive terminal app with sub-menus and demos including a RubyGems checksum validator and Big-O benchmarks using a spinner with threads"
   s.authors     = ["Luke Schoen", "Ruegen Aschenbrenner"]
   s.email       = 'ltfschoen@gmail.com'
-  s.required_ruby_version = Gem::Requirement.new(">= 1.9.3")
-  s.required_rubygems_version = Gem::Requirement.new(">= 1.3.2")
+  s.required_ruby_version = Gem::Requirement.new(">= 2.1.0")
+  s.required_rubygems_version = Gem::Requirement.new(">= 2.2.0")
   # Gemspec Dependencies http://guides.rubygems.org/patterns/
   s.add_runtime_dependency 'rake', '~> 12.1', '>= 12.1.0'
   s.add_runtime_dependency 'terminal-table', '~> 1.8', '>= 1.8.0'

@@ -1,8 +1,11 @@
 require 'rake'
 
+# Travis CI config so it can just run `rake`
+task default: "discrete:default"
+
 namespace :discrete do
   # rake
-  task default: %w[run]
+  task default: %w[test]
 
   # rake discrete:run[default]
   desc "Run Gem discrete math"

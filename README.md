@@ -1,3 +1,5 @@
+Travis CI Build Status: [![Build Status](https://api.travis-ci.org/ltfschoen/discrete_math.svg)](https://travis-ci.org/ltfschoen/discrete_math)
+
 * Gem End-User Usage
   * Install [Ruby](https://www.ruby-lang.org/en/documentation/installation/)
   * Install using Bundler with Ruby or framework (i.e. Ruby on Rails)
@@ -56,9 +58,10 @@
   * Unit Tests
     * Run Unit Tests
       ```
-      rake discrete:test
+      rake
       ```
-      * Alternative `rspec spec/helpers/math_helpers_spec.rb`
+      * Alternative 1: `rake discrete:test`
+      * Alternative 2: `rspec spec/helpers/math_helpers_spec.rb`
   * Build, install, and run Gem updates on local machine
     * Change version in discrete_math.gemspec
     * Note: [Check that all used Gem files have been added to Gemspec](http://guides.rubygems.org/specification-reference/#files)
