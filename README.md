@@ -56,12 +56,25 @@ Travis CI Build Status: [![Build Status](https://api.travis-ci.org/ltfschoen/dis
       ruby main.rb
       ```
   * Unit Tests
-    * Run Unit Tests
-      ```
-      rake
-      ```
-      * Alternative 1: `rake discrete:test`
-      * Alternative 2: `rspec spec/helpers/math_helpers_spec.rb`
+    * Run Automatic Unit Tests `bundle exec guard`
+      * Alternative 1: `rake`
+      * Alternative 2: `rake discrete:test`
+      * Alternative 3: `rspec spec/helpers/math_helpers_spec.rb`
+    * Guard Setup
+      * Add to Gemfile
+        ```
+        source 'https://rubygems.org'
+
+        group :development do
+          gem 'rspec', '~> 3.6.0'
+          gem 'guard-rspec', '~> 4.7.3'
+        end
+        ```
+      * Install dependencies `bundle install`
+      * Generate Guardfile `bundle exec guard init rspec`
+      * Remove Rails sections from Guardfile
+      * Run Guard `bundle exec guard`
+      * Watch Guard automatically run tests after each codebase change
   * Build, install, and run Gem updates on local machine
     * Change version in discrete_math.gemspec
     * Note: [Check that all used Gem files have been added to Gemspec](http://guides.rubygems.org/specification-reference/#files)

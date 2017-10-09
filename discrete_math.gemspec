@@ -15,6 +15,7 @@ Gem::Specification.new do |s|
   s.add_runtime_dependency 'algorithms', '~> 0.6', '>= 0.6.1'
   s.add_runtime_dependency 'faker', '~> 0.8', '>= 0.8.6'
   s.add_development_dependency 'rspec', '~> 3.6', '>= 3.6.0'
+  s.add_development_dependency 'guard-rspec', '~> 4.7', '>= 4.7.3'
   # Self-signing Certificates http://guides.rubygems.org/security/
   s.cert_chain  = ['certs/ltfschoen.pem']
   s.signing_key = File.expand_path("~/.ssh/gem-private_key.pem") if $0 =~ /gem\z/
